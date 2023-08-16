@@ -5,9 +5,20 @@ from langchain.memory import ConversationBufferMemory
 from langchain.memory.chat_message_histories import StreamlitChatMessageHistory
 from langchain.tools import DuckDuckGoSearchRun
 import streamlit as st
+from streamlit_lottie import st_lottie
+import requests
+import json
+
+# Load Lottie URL
+lottie_url = 'https://lottie.host/058cd963-e4d5-49f4-b9e0-57f9c62c158b/pA6ZQJwSTP.json'  # Replace with your Lottie URL
+lottie_json = requests.get(lottie_url).json()
 
 st.set_page_config(page_title="LangChain: OpenAI ChatBot")
-st.title("LangChain: OpenAI ChatBot")
+col1, col4 = st.columns([4, 1])
+with col1:
+    st.title("LangChain: OpenAI ChatBot")
+with col4:
+    st_lottie(lottie_json, width=100, height=100)
 
 openai_api_key = st.sidebar.text_input("OpenAI API Key", type="password")
 
@@ -54,3 +65,11 @@ if prompt := st.chat_input(placeholder="What is the tallest mountain in the worl
         response = executor(prompt, callbacks=[st_cb])
         st.write(response["output"])
         st.session_state.steps[str(len(msgs.messages) - 1)] = response["intermediate_steps"]
+
+# Load another Lottie JSON from a URL
+lottie_url = 'https://lottie.host/8a4240fd-d610-4b17-8e9c-ccf796b157b0/XUsYEgQXpe.json' 
+another_lottie_json = requests.get(lottie_url).json()
+
+# Add the Lottie animation to the bottom of the sidebar
+with st.sidebar:
+    st_lottie(another_lottie_json, width=300, height=300)

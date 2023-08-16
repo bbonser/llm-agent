@@ -2,3 +2,4 @@ langchain
 streamlit
 OpenAI
 duckduckgo-search
+streamlit-lottie
