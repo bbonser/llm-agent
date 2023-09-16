@@ -1,24 +1,20 @@
 name: Semgrep
-on:
-  workflow_dispatch: {}
+on: 
   pull_request: {}
+  workflow_dispatch: {}
   push:
-    branches:
-      - main
-    paths:
-      - .github/workflows/semgrep.yml
+    branches: ["master", "main"]
   schedule:
-    # random HH:MM to avoid a load spike on GitHub Actions at 00:00
     - cron: '12 15 * * *'
 jobs:
   semgrep:
-    name: semgrep/ci
+    name: semgrep/ci 
     runs-on: ubuntu-latest
-    env:
-      SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
     container:
       image: bbonser/llm-agent:main
     if: (github.actor != 'dependabot[bot]')
     steps:
       - uses: actions/checkout@v3
       - run: semgrep ci
+        env:
+          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
