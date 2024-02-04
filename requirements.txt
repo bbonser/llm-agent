@@ -3,3 +3,5 @@ streamlit
 OpenAI
 duckduckgo-search
 streamlit-lottie
+pyarrow
+curl-cffi
