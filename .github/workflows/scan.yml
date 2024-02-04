@@ -9,7 +9,7 @@ jobs:
 
    steps:
    - name: Checkout Code
-     uses: actions/checkout@v2
+     uses: actions/checkout@v4
 
    - name: Set up Python
      uses: actions/setup-python@v2
@@ -35,7 +35,7 @@ jobs:
 
    steps:
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
      
     - name: Set up Docker
       uses: docker-practice/actions-setup-docker@v1
@@ -46,7 +46,7 @@ jobs:
       run: docker build -f Dockerfile -t myapp:latest .
 
     - name: Docker Scout Scan
-      uses: docker/scout-action@v1.0.9
+      uses: docker/scout-action@v1.4.1
       with:
         dockerhub-user: ${{ secrets.DOCKER_USERNAME }}
         dockerhub-password: ${{ secrets.DOCKER_PASSWORD }}
