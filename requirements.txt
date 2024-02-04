@@ -3,7 +3,3 @@ streamlit
 OpenAI
 duckduckgo-search
 streamlit-lottie
-aiohttp>=3.8.5 # not directly required, pinned by Snyk to avoid a vulnerability
-certifi>=2023.7.22 # not directly required, pinned by Snyk to avoid a vulnerability
-gitpython>=3.1.35 # not directly required, pinned by Snyk to avoid a vulnerability
-langchain>=0.0.247 # not directly required, pinned by Snyk to avoid a vulnerability
