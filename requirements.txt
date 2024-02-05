@@ -3,5 +3,5 @@ streamlit
 OpenAI
 duckduckgo-search
 streamlit-lottie
-pyarrow==14.0.2
+pyarrow==15.0.0
 curl-cffi
