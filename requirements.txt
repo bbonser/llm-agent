@@ -3,5 +3,9 @@ streamlit
 OpenAI
 duckduckgo-search
 streamlit-lottie
+<<<<<<< HEAD
 pyarrow
+=======
+pyarrow==15.0.0
+>>>>>>> 31544f423f1aba7130ffda6232aebea99f5cb53c
 curl-cffi
