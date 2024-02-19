@@ -11,4 +11,4 @@ jobs:
       with:
         target: Dockerfile
       env:
-        GIT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        LINT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
