@@ -1,14 +1,11 @@
 name: Lint
 on: [push]
+
 jobs:
-  lint:
+  lint_docker_file:
     runs-on: ubuntu-latest
-    steps: 
-    - name: Checkout
-      uses: actions/checkout@master
-    - name: lint
-      uses: luke142367/Docker-Lint-Action@v1.1.1
-      with:
-        target: Dockerfile
-      env:
-        LINT_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: lint docker file
+        uses: rusty-actions/dockerfile-linter@v1
+        with:
+          dockerfile: ./Dockerfile
