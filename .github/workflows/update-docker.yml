@@ -1,8 +1,7 @@
 name: Update Dockerfiles
 
-on:
-  schedule:
-    - cron:  '40 16 * * *'
+on: [push]
+
 jobs:
   deploy:
     name: Update Dockerfiles
