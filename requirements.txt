@@ -5,6 +5,7 @@ duckduckgo-search
 streamlit-lottie
 pyarrow>=14.0.1
 curl-cffi
+postgresql
 pillow>=10.0.1 # not directly required, pinned by Snyk to avoid a vulnerability
 certifi>=2023.7.22 # not directly required, pinned by Snyk to avoid a vulnerability
 ipython>=8.10.0 # not directly required, pinned by Snyk to avoid a vulnerability

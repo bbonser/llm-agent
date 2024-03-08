@@ -8,7 +8,7 @@ WORKDIR /app
 ADD . /app
 
 # Update package listings and upgrade libpq-dev and libpq5
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update --fix-missing && apt-get install -y --no-install-recommends \
     postgresql-15/libpq-dev=15.6-0+deb12u1 \
     postgresql-15/libpq5=15.6-0+deb12u1 && \
     rm -rf /var/lib/apt/lists/*
