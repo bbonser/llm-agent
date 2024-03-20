@@ -1,17 +1,17 @@
 # Use an official Python runtime as a parent image
-FROM python:3.13-rc-slim-bookworm
+FROM python:3.12
 
-# Set the working directory in the container to /app
+# Install build dependencies
+RUN apt-get update && apt-get install -y build-essential
+
+# Set the working directory in the container
 WORKDIR /app
+
+# Copy the dependencies file to the working directory
+COPY requirements.txt .
 
 # Add the current directory contents into the container at /app
 ADD . /app
-
-# Update package listings and upgrade libpq-dev and libpq5
-RUN apt-get update --fix-missing && apt-get install -y --no-install-recommends \
-    postgresql-15/libpq-dev=15.6-0+deb12u1 \
-    postgresql-15/libpq5=15.6-0+deb12u1 && \
-    rm -rf /var/lib/apt/lists/*
 
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
