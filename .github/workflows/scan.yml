@@ -36,10 +36,6 @@ jobs:
    steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: Grant permissions to the runner
-      run: |
-        sudo chmod -R 777 /opt/actions-runner
      
     - name: Set up Docker
       uses: docker-practice/actions-setup-docker@v1
