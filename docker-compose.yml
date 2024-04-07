@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  llm-agent:
+    image: bbonser/llm-agent:latest
+    container_name: llm-agent
+    network_mode: bridge
+    volumes:
+      - ./llm-agent:/app/data
+    ports:
+      - 8501:8501  # <Host Port>:<Container Port>
+    restart: always
+networks:
+  default:
+    name: proxy
+    external: true
