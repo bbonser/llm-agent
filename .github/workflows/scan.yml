@@ -1,4 +1,4 @@
-name: CI Scan
+name: CI
   
 on: [push]
 
